@@ -4,15 +4,15 @@
 #
 Name     : R-lubridate
 Version  : 1.5.6
-Release  : 25
+Release  : 26
 URL      : http://cran.r-project.org/src/contrib/lubridate_1.5.6.tar.gz
 Source0  : http://cran.r-project.org/src/contrib/lubridate_1.5.6.tar.gz
 Summary  : Make Dealing with Dates a Little Easier
 Group    : Development/Tools
 License  : GPL-2.0
 Requires: R-lubridate-lib
-Requires: R-stringr
-BuildRequires : R-stringr
+Requires: R-memoise
+BuildRequires : R-memoise
 BuildRequires : clr-R-helpers
 
 %description
@@ -49,6 +49,7 @@ mkdir -p %{buildroot}/usr/lib64/R/library
 R CMD INSTALL --install-tests --build  -l %{buildroot}/usr/lib64/R/library lubridate
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
+export LANG=C
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost
@@ -87,33 +88,7 @@ R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/lib
 /usr/lib64/R/library/lubridate/help/paths.rds
 /usr/lib64/R/library/lubridate/html/00Index.html
 /usr/lib64/R/library/lubridate/html/R.css
-/usr/lib64/R/library/lubridate/tests/testthat.R
-/usr/lib64/R/library/lubridate/tests/testthat/test-Dates.R
-/usr/lib64/R/library/lubridate/tests/testthat/test-POSIXt.R
-/usr/lib64/R/library/lubridate/tests/testthat/test-accessors.R
-/usr/lib64/R/library/lubridate/tests/testthat/test-am-pm.R
-/usr/lib64/R/library/lubridate/tests/testthat/test-daylight-savings.R
-/usr/lib64/R/library/lubridate/tests/testthat/test-decimal-date.R
-/usr/lib64/R/library/lubridate/tests/testthat/test-difftimes.R
-/usr/lib64/R/library/lubridate/tests/testthat/test-durations.R
-/usr/lib64/R/library/lubridate/tests/testthat/test-guess.R
-/usr/lib64/R/library/lubridate/tests/testthat/test-instants.R
-/usr/lib64/R/library/lubridate/tests/testthat/test-intervals.R
-/usr/lib64/R/library/lubridate/tests/testthat/test-ops-addition.R
-/usr/lib64/R/library/lubridate/tests/testthat/test-ops-division.R
-/usr/lib64/R/library/lubridate/tests/testthat/test-ops-integer-division.R
-/usr/lib64/R/library/lubridate/tests/testthat/test-ops-modulo.R
-/usr/lib64/R/library/lubridate/tests/testthat/test-ops-multiplication.R
-/usr/lib64/R/library/lubridate/tests/testthat/test-ops-subtraction.R
-/usr/lib64/R/library/lubridate/tests/testthat/test-parsers.R
-/usr/lib64/R/library/lubridate/tests/testthat/test-periods.R
-/usr/lib64/R/library/lubridate/tests/testthat/test-pretty.R
-/usr/lib64/R/library/lubridate/tests/testthat/test-settors.R
-/usr/lib64/R/library/lubridate/tests/testthat/test-stamp.R
-/usr/lib64/R/library/lubridate/tests/testthat/test-timespans.R
-/usr/lib64/R/library/lubridate/tests/testthat/test-timezones.R
-/usr/lib64/R/library/lubridate/tests/testthat/test-update.R
-/usr/lib64/R/library/lubridate/tests/testthat/test-utilities.R
+/usr/lib64/R/library/lubridate/libs/symbols.rds
 
 %files lib
 %defattr(-,root,root,-)
