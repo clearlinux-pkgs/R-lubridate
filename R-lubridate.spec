@@ -4,7 +4,7 @@
 #
 Name     : R-lubridate
 Version  : 1.7.3
-Release  : 52
+Release  : 53
 URL      : https://cran.r-project.org/src/contrib/lubridate_1.7.3.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/lubridate_1.7.3.tar.gz
 Summary  : Make Dealing with Dates a Little Easier
@@ -12,9 +12,7 @@ Group    : Development/Tools
 License  : GPL-2.0 GPL-2.0+
 Requires: R-lubridate-lib
 Requires: R-Rcpp
-Requires: R-evaluate
 BuildRequires : R-Rcpp
-BuildRequires : R-evaluate
 BuildRequires : clr-R-helpers
 
 %description
@@ -41,11 +39,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1520300234
+export SOURCE_DATE_EPOCH=1523314798
 
 %install
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1520300234
+export SOURCE_DATE_EPOCH=1523314798
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
