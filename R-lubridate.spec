@@ -4,24 +4,20 @@
 #
 Name     : R-lubridate
 Version  : 1.7.4
-Release  : 65
+Release  : 66
 URL      : https://cran.r-project.org/src/contrib/lubridate_1.7.4.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/lubridate_1.7.4.tar.gz
-Summary  : Make Dealing with Dates a Little Easier
+Summary  : Functions to work with date-times and time-spans
 Group    : Development/Tools
 License  : GPL-2.0 GPL-2.0+
-Requires: R-lubridate-lib
+Requires: R-lubridate-lib = %{version}-%{release}
 Requires: R-Rcpp
 BuildRequires : R-Rcpp
-BuildRequires : clr-R-helpers
+BuildRequires : buildreq-R
 
 %description
-friendly parsing of date-time data, extraction and updating of components of
-    a date-time (years, months, days, hours, minutes, and seconds), algebraic
-    manipulation on date-time and time-span objects. The 'lubridate' package has
-    a consistent and memorable syntax that makes working with dates easy and
-    fun.
-    Parts of the 'CCTZ' source code, released under the Apache 2.0 License,
+lubridate <img src="man/figures/logo.png" align="right" />
+==========================================================
 
 %package lib
 Summary: lib components for the R-lubridate package.
@@ -39,11 +35,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1523742093
+export SOURCE_DATE_EPOCH=1552773332
 
 %install
+export SOURCE_DATE_EPOCH=1552773332
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1523742093
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -78,8 +74,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library lubridate|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || : || :
+R CMD check --no-manual --no-examples --no-codoc  lubridate || :
 
 
 %files
@@ -116,9 +111,39 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || : || :
 /usr/lib64/R/library/lubridate/help/paths.rds
 /usr/lib64/R/library/lubridate/html/00Index.html
 /usr/lib64/R/library/lubridate/html/R.css
-/usr/lib64/R/library/lubridate/libs/symbols.rds
 /usr/lib64/R/library/lubridate/pkgdown/assets/tidyverse.css
 /usr/lib64/R/library/lubridate/pkgdown/assets/tidyverse.css.map
+/usr/lib64/R/library/lubridate/tests/testthat.R
+/usr/lib64/R/library/lubridate/tests/testthat/test-Dates.R
+/usr/lib64/R/library/lubridate/tests/testthat/test-POSIXt.R
+/usr/lib64/R/library/lubridate/tests/testthat/test-accessors.R
+/usr/lib64/R/library/lubridate/tests/testthat/test-am-pm.R
+/usr/lib64/R/library/lubridate/tests/testthat/test-daylight-savings.R
+/usr/lib64/R/library/lubridate/tests/testthat/test-decimal-date.R
+/usr/lib64/R/library/lubridate/tests/testthat/test-difftimes.R
+/usr/lib64/R/library/lubridate/tests/testthat/test-durations.R
+/usr/lib64/R/library/lubridate/tests/testthat/test-guess.R
+/usr/lib64/R/library/lubridate/tests/testthat/test-instants.R
+/usr/lib64/R/library/lubridate/tests/testthat/test-intervals.R
+/usr/lib64/R/library/lubridate/tests/testthat/test-namespace.R
+/usr/lib64/R/library/lubridate/tests/testthat/test-ops-addition.R
+/usr/lib64/R/library/lubridate/tests/testthat/test-ops-compare.R
+/usr/lib64/R/library/lubridate/tests/testthat/test-ops-division.R
+/usr/lib64/R/library/lubridate/tests/testthat/test-ops-integer-division.R
+/usr/lib64/R/library/lubridate/tests/testthat/test-ops-modulo.R
+/usr/lib64/R/library/lubridate/tests/testthat/test-ops-multiplication.R
+/usr/lib64/R/library/lubridate/tests/testthat/test-ops-subtraction.R
+/usr/lib64/R/library/lubridate/tests/testthat/test-parsers.R
+/usr/lib64/R/library/lubridate/tests/testthat/test-periods.R
+/usr/lib64/R/library/lubridate/tests/testthat/test-pretty.R
+/usr/lib64/R/library/lubridate/tests/testthat/test-rollback.R
+/usr/lib64/R/library/lubridate/tests/testthat/test-round.R
+/usr/lib64/R/library/lubridate/tests/testthat/test-settors.R
+/usr/lib64/R/library/lubridate/tests/testthat/test-stamp.R
+/usr/lib64/R/library/lubridate/tests/testthat/test-timespans.R
+/usr/lib64/R/library/lubridate/tests/testthat/test-timezones.R
+/usr/lib64/R/library/lubridate/tests/testthat/test-update.R
+/usr/lib64/R/library/lubridate/tests/testthat/test-utilities.R
 
 %files lib
 %defattr(-,root,root,-)
