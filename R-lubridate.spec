@@ -4,15 +4,13 @@
 #
 Name     : R-lubridate
 Version  : 1.7.4
-Release  : 70
+Release  : 71
 URL      : https://cran.r-project.org/src/contrib/lubridate_1.7.4.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/lubridate_1.7.4.tar.gz
 Summary  : Functions to work with date-times and time-spans
 Group    : Development/Tools
 License  : GPL-2.0 GPL-2.0+
 Requires: R-lubridate-lib = %{version}-%{release}
-Requires: R-rlang
-Requires: R-stringi
 BuildRequires : R-Rcpp
 BuildRequires : R-rlang
 BuildRequires : R-stringi
@@ -38,10 +36,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552947580
+export SOURCE_DATE_EPOCH=1556466877
 
 %install
-export SOURCE_DATE_EPOCH=1552947580
+export SOURCE_DATE_EPOCH=1556466877
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -77,7 +75,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc  lubridate || :
+R CMD check --no-manual --no-examples --no-codoc lubridate || :
 
 
 %files
@@ -152,4 +150,3 @@ R CMD check --no-manual --no-examples --no-codoc  lubridate || :
 %defattr(-,root,root,-)
 /usr/lib64/R/library/lubridate/libs/lubridate.so
 /usr/lib64/R/library/lubridate/libs/lubridate.so.avx2
-/usr/lib64/R/library/lubridate/libs/lubridate.so.avx512
