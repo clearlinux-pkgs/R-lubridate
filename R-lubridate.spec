@@ -4,7 +4,7 @@
 #
 Name     : R-lubridate
 Version  : 1.7.4
-Release  : 76
+Release  : 77
 URL      : https://cran.r-project.org/src/contrib/lubridate_1.7.4.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/lubridate_1.7.4.tar.gz
 Summary  : Make Dealing with Dates a Little Easier
@@ -16,14 +16,11 @@ Requires: R-stringr
 BuildRequires : R-Rcpp
 BuildRequires : R-stringr
 BuildRequires : buildreq-R
+BuildRequires : util-linux
 
 %description
-friendly parsing of date-time data, extraction and updating of components of
-    a date-time (years, months, days, hours, minutes, and seconds), algebraic
-    manipulation on date-time and time-span objects. The 'lubridate' package has
-    a consistent and memorable syntax that makes working with dates easy and
-    fun.
-    Parts of the 'CCTZ' source code, released under the Apache 2.0 License,
+lubridate <img src="man/figures/logo.png" align="right" />
+==========================================================
 
 %package lib
 Summary: lib components for the R-lubridate package.
@@ -41,10 +38,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1569291673
+export SOURCE_DATE_EPOCH=1571857884
 
 %install
-export SOURCE_DATE_EPOCH=1569291673
+export SOURCE_DATE_EPOCH=1571857884
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
