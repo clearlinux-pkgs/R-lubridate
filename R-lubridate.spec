@@ -4,7 +4,7 @@
 #
 Name     : R-lubridate
 Version  : 1.7.8
-Release  : 81
+Release  : 82
 URL      : https://cran.r-project.org/src/contrib/lubridate_1.7.8.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/lubridate_1.7.8.tar.gz
 Summary  : Make Dealing with Dates a Little Easier
@@ -18,19 +18,12 @@ BuildRequires : R-generics
 BuildRequires : buildreq-R
 
 %description
-# lubridate <img src="man/figures/logo.png" align="right" />
-[![Build
-Status](https://travis-ci.org/tidyverse/lubridate.svg?branch=master)](https://travis-ci.org/tidyverse/lubridate)
-[![R build
-status](https://github.com/tidyverse/lubridate/workflows/R-CMD-check/badge.svg)](https://github.com/tidyverse/lubridate)
-[![Coverage
-Status](https://codecov.io/gh/tidyverse/lubridate/branch/master/graph/badge.svg)](https://codecov.io/gh/tidyverse/lubridate)
-[![CRAN RStudio mirror
-downloads](http://cranlogs.r-pkg.org/badges/lubridate)](https://cran.r-project.org/package=lubridate)
-[![Development
-version](https://img.shields.io/badge/devel-1.7.4.9000-orange.svg)](https://github.com/tidyverse/lubridate)
-[![CRAN
-version](http://www.r-pkg.org/badges/version/lubridate)](https://cran.r-project.org/package=lubridate)
+fast and user friendly parsing of date-time data, extraction and
+    updating of components of a date-time (years, months, days, hours,
+    minutes, and seconds), algebraic manipulation on date-time and
+    time-span objects. The 'lubridate' package has a consistent and
+    memorable syntax that makes working with dates easy and fun.  Parts of
+    the 'CCTZ' source code, released under the Apache 2.0 License, are
 
 %package lib
 Summary: lib components for the R-lubridate package.
@@ -42,21 +35,22 @@ lib components for the R-lubridate package.
 
 %prep
 %setup -q -c -n lubridate
+cd %{_builddir}/lubridate
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1586276329
+export SOURCE_DATE_EPOCH=1589827464
 
 %install
-export SOURCE_DATE_EPOCH=1586276329
+export SOURCE_DATE_EPOCH=1589827464
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
