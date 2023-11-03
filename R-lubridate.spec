@@ -5,7 +5,7 @@
 #
 Name     : R-lubridate
 Version  : 1.9.3
-Release  : 111
+Release  : 112
 URL      : https://cran.r-project.org/src/contrib/lubridate_1.9.3.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/lubridate_1.9.3.tar.gz
 Summary  : Make Dealing with Dates a Little Easier
