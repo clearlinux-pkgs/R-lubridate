@@ -1,5 +1,5 @@
 PKG_NAME := R-lubridate
-URL = https://cran.r-project.org/src/contrib/lubridate_1.9.3.tar.gz
+URL = https://ftp.osuosl.org/pub/cran/src/contrib/lubridate_1.9.4.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
